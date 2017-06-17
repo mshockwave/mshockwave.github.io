@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="landing-page">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class LandingPage extends Polymer.Element {
+      static get is() { return 'landing-page'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'landing-page'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(LandingPage.is, LandingPage);
+  </script>
+</dom-module>
