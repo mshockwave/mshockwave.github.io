@@ -14,7 +14,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i" rel="stylesheet">
 
-    <link rel="import" href="/src/landing-page/landing-page.html">
+    <link rel="import" href="/src/page/landing-page.html">
 
     <style>
       html, body {
@@ -28,6 +28,15 @@
     </style>
   </head>
   <body>
+    <script>
+      // load pre-caching service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+
     <landing-page></landing-page>
   </body>
 </html>

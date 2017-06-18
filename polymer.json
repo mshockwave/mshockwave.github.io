@@ -1,7 +1,33 @@
 {
+  "entrypoint": "index.html",
+  "shell": "src/page/landing-page.html",
+  "fragments": [
+    "src/element/vertical-resize-title.html"
+  ],
+  "sources": [
+    "src/**/*",
+    "images/**/*",
+    "bower.json"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/*",
+    "404.html"
+  ],
+  
   "lint": {
     "rules": [
       "polymer-2"
     ]
-  }
+  },
+  "builds": [
+    {
+      "preset": "es6-bundled",
+      "name": "es6"
+    },
+    {
+      "preset": "es5-bundled",
+      "name": "es5"
+    }
+  ]
 }
