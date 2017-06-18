@@ -24,24 +24,44 @@
 
       app-toolbar {
         height: 64px;
+        text-align: center;
       }
-      app-toolbar.tall {
-        height: 72px;
+      .tall {
+        height: 286px;
       }
 
       app-header {
         @apply --layout-horizontal;
         @apply --layout-center;
-        background-color: grey;
+        background-color: #607D8B;
         color: white;
-        height: 200px;
+        height: 350px;
         --app-header-background-rear-layer: {
-          background-color: purple;
+          background-color: #90A4Ae;
         };
       }
 
       paper-tabs {
-        margin-left: 64px;
+        margin-left: 32px;
+        margin-bottom: 10px;
+      }
+      paper-tab {
+        --paper-tab-content: {
+          font-size: 1.6em;
+          font-weight: 300;
+          margin: 0 10px;
+        };
+      }
+
+      [main-title]{
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+      [sub-title] {
+        font-size: 1.7em;
+        font-weight: 200;
       }
     </style>
     
@@ -54,20 +74,21 @@
             selected="0"
             scrollable
             hide-scroll-buttons>
-            <paper-tab>TAB1</paper-tab>
-            <paper-tab>TAB2</paper-tab>
-            <paper-tab>TAB3</paper-tab>
+            <paper-tab>Profile</paper-tab>
+            <paper-tab>Projects</paper-tab>
+            <paper-tab>Publications</paper-tab>
           </paper-tabs>
-          <div style="text-align: center;" condensed-title>
-            Believe in Code
+          <div condensed-title>
+            Min-Yih Hsu
           </div>
         </app-toolbar>
 
-        <app-toolbar class="tall">
-          <h1 main-title style="text-align:center;">
+        <div class="tall layout vertical center center-justified">
+          <h1 main-title>
             {&nbspBelieve in Code&nbsp}
           </h1>
-        </app-toolbar>
+          <span sub-title>Min-Yih Hsu</span>
+        </div>
       </app-header>
 
       <div class="layout vertical center">
