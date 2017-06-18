@@ -1,13 +1,95 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tab.html">
+
+<link rel="import" href="../elements/vertical-resize-title.html">
 
 <dom-module id="landing-page">
   <template>
-    <style>
+    <style include="iron-flex iron-flex-alignment">
       :host {
         display: block;
       }
+
+      app-header-layout {
+        background-color: var(--paper-grey-100);
+      }
+
+      app-toolbar {
+        height: 64px;
+      }
+      app-toolbar.tall {
+        height: 72px;
+      }
+
+      app-header {
+        @apply --layout-horizontal;
+        @apply --layout-center;
+        background-color: grey;
+        color: white;
+        height: 200px;
+        --app-header-background-rear-layer: {
+          background-color: purple;
+        };
+      }
+
+      paper-tabs {
+        margin-left: 64px;
+      }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    
+    <app-header-layout fullbleed has-scrolling-region>
+      <app-header slot="header" 
+        fixed condenses
+        effects="blend-background vertical-resize-title waterfall">
+        <app-toolbar>
+          <paper-tabs bottom-item
+            selected="0"
+            scrollable
+            hide-scroll-buttons>
+            <paper-tab>TAB1</paper-tab>
+            <paper-tab>TAB2</paper-tab>
+            <paper-tab>TAB3</paper-tab>
+          </paper-tabs>
+          <div style="text-align: center;" condensed-title>
+            Believe in Code
+          </div>
+        </app-toolbar>
+
+        <app-toolbar class="tall">
+          <h1 main-title style="text-align:center;">
+            {&nbspBelieve in Code&nbsp}
+          </h1>
+        </app-toolbar>
+      </app-header>
+
+      <div class="layout vertical center">
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+        <h1>Test</h1>
+      </div>
+
+    </app-header-layout>
+
   </template>
 
   <script>
@@ -17,14 +99,6 @@
      */
     class LandingPage extends Polymer.Element {
       static get is() { return 'landing-page'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'landing-page'
-          }
-        };
-      }
     }
 
     window.customElements.define(LandingPage.is, LandingPage);
