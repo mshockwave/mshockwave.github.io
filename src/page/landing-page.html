@@ -38,7 +38,7 @@
         color: white;
         height: 350px;
         --app-header-background-rear-layer: {
-          background-color: #90A4Ae;
+          background-color: #AB47BC;
         };
       }
 
@@ -63,6 +63,13 @@
       [sub-title] {
         font-size: 1.7em;
         font-weight: 200;
+      }
+
+      #contentArea {
+        padding-top: 40px;
+      }
+      #contentArea > *{
+        margin-bottom: 40px;
       }
     </style>
     
@@ -92,7 +99,11 @@
         </div>
       </app-header>
 
-      <profile-page></profile-page>
+      <div style="width: 100vw;" 
+        id="contentArea"
+        class="layout vertical center">
+        <profile-page></profile-page>
+      </div>
     </app-header-layout>
 
   </template>
