@@ -71,8 +71,35 @@
       #contentArea > *{
         margin-bottom: 40px;
       }
+
+      paper-dialog span {
+        font-size: 1.2em;
+      }
     </style>
     
+    <!-- Put here to get higher z-index -->
+    <paper-dialog id="contactDialog"
+      class="layout vertical start">
+
+      <span>Phone:</span>
+      <span>+886-3-5715131 Ext. 33900</span>
+      <span>+886-970-880309</span>
+
+      <span> Email: </span>
+      <img src="../../images/email-formal.png" 
+          style="height: 1.5em;"/>
+      <img src="../../images/email-private.png" 
+          style="height: 1.5em;"/>
+      
+      <span>
+        LinkedIn: 
+        <a href="https://www.linkedin.com/in/bekketmcclane"
+          target="_blank">
+          https://www.linkedin.com/in/bekketmcclane
+        </a>
+      </span>
+    </paper-dialog>
+
     <app-header-layout fullbleed has-scrolling-region>
       <app-header slot="header" 
         fixed condenses
@@ -102,7 +129,8 @@
       <div style="width: 100vw;" 
         id="contentArea"
         class="layout vertical center">
-        <profile-page></profile-page>
+        <profile-page 
+          on-show-contact="_onShowContact"></profile-page>
       </div>
     </app-header-layout>
 
@@ -115,6 +143,9 @@
      */
     class LandingPage extends Polymer.Element {
       static get is() { return 'landing-page'; }
+      _onShowContact(){
+        this.$.contactDialog.open();
+      }
     }
 
     window.customElements.define(LandingPage.is, LandingPage);

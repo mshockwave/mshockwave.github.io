@@ -4,7 +4,7 @@
 <link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-styles/color.html">
-
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
 
 <dom-module id="profile-page">
   <template>
@@ -58,6 +58,10 @@
      */
     class ProfilePage extends Polymer.Element {
       static get is() { return 'profile-page'; }
+
+      _onContactInfoClick() {
+        this.dispatchEvent(new CustomEvent('show-contact'));
+      }
     }
 
     window.customElements.define(ProfilePage.is, ProfilePage);
