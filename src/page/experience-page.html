@@ -1,0 +1,76 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<dom-module id="experience-page">
+  <template>
+    <style include="iron-flex iron-flex-alignment app-grid-style">
+       :host {
+        display: block;
+        width: 70%;
+
+        --app-grid-columns: 2;
+        --app-grid-expandible-item-columns: 2;
+        --app-grid-gutter: 10px;
+      }
+
+      .app-grid > paper-card{
+        margin-bottom: 14px;
+      }
+      .app-grid > h1,
+      .app-grid > [expand-item],
+      .app-grid > [chrono-title],
+      .app-grid > [chrono-divide-line] {
+        @apply --app-grid-expandible-item;
+      }
+
+      [chrono-title] {
+        color: var(--paper-grey-700);
+        font-size: 1.8em;
+        font-weight: 300;
+        margin-bottom: 20px;
+
+        border-left: 3px solid var(--paper-pink-500);
+        padding-left: 8px;
+      }
+
+      [chrono-divide-line] {
+        display: block;
+        height: 30px;
+      }
+
+      [sub-title] {
+        color: var(--paper-grey-600);
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+    </style>
+
+    <div list-container class="app-grid">
+      <h1 style="margin-top: 0; text-align:center; margin-bottom: 0.7em;">
+        Experience
+      </h1>
+
+      <span chrono-title>2017</span>
+      <paper-card heading="Software Engineer Internship">
+        <div class="card-content layout vertical start">
+          <span sub-title>MediaTek USA, Woburn, MA. July ~ October</span>
+          <span sub-title>DSP Compilers and Optimizations.</span>
+        </div>
+      </paper-card>
+
+      <div chrono-divide-line></div>
+      <span chrono-title>2016</span>
+      
+    </div>
+  </template>
+  <script>
+    class ExperiencePage extends Polymer.Element {
+      static get is(){ return 'experience-page'; }
+    }
+
+    window.customElements.define(ExperiencePage.is, ExperiencePage);
+  </script>
+</dom-module>
