@@ -14,6 +14,7 @@
 <link rel="import" href="profile-page.html">
 <link rel="import" href="experience-page.html">
 <link rel="import" href="publication-page.html">
+<link rel="import" href="project-page.html">
 
 <dom-module id="landing-page">
   <template>
@@ -150,6 +151,8 @@
         </div>
 
         <publication-page></publication-page>
+
+        <project-page></project-page>
       </iron-pages>
     </app-header-layout>
 
@@ -206,6 +209,13 @@
               condensedTitle: 'Publications'
             };
 
+          case 2:
+            return {
+              title: '<<< Projects >>>',
+              subTitle: '',
+              condensedTitle: 'Projects'
+            };
+
           default:
             return{
               title: 'Dummy',
@@ -232,6 +242,15 @@
               '--main-banner-background': '#00796B',
               '--main-banner-color': 'white',
               '--condensed-banner-background': '#3F51B5'
+            });
+            break;
+          }
+
+          case 2:{
+            this.updateStyles({
+              '--main-banner-background': '#388E3C',
+              '--main-banner-color': 'white',
+              '--condensed-banner-background': '#E64A19'
             });
             break;
           }

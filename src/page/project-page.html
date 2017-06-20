@@ -1,0 +1,153 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+
+<dom-module id="project-page">
+  <template>
+    <style include="iron-flex iron-flex-alignment">
+      :host {
+        display: block;
+        width: 100%;
+      }
+
+      paper-card {
+        margin: 14px;
+      }
+
+      a,
+      a:visited {
+        text-transform: none;
+        text-decoration: none;
+        color: unset;
+      }
+
+      paper-item {
+        margin: 15px;
+        --paper-item: {
+          @apply --layout-vertical;
+          @apply --layout-start;
+          font-size: 1.4em;
+          font-weight: 300;
+          line-height: 1.4;
+          border-left: 3px solid var(--paper-cyan-500);
+        };
+      }
+
+      h1, h2 {
+        font-weight: 400;
+      }
+
+      [description]{
+        color: var(--paper-grey-600);
+      }
+
+      [link] {
+        margin-bottom: 1.1em;
+        margin-left: 0.5em;
+      }
+    </style>
+
+    <div class="layout vertical start"
+      style="width: 60%; padding: 30px 20%;">
+      <div class="layout horizontal center">
+        <paper-card>
+          <div class="card-content layout vertical center">
+            <a href="https://github.com/mshockwave" target="_blank">
+            <img src="../../images/github-logo.png"
+              style="width: 10vw;"/>
+            <h2>mshockwave</h2>
+            </a>
+          </div>
+        </paper-card>
+
+        <paper-card>
+          <div class="card-content layout vertical center">
+            <a href="https://bitbucket.org/mshockwave" target="_blank">
+            <img src="../../images/bitbucket-logo.png"
+              style="width: 10vw;"/>
+            <h2>mshockwave</h2>
+            </a>
+          </div>
+        </paper-card>
+      </div>
+
+      <h1 style="margin-top: 1.8em;">
+        Highlights
+      </h1>
+
+      <paper-item>
+        <h2>
+          Reference Design for the Next Generation OpenCL Fixed Point Features
+        </h2>
+        <a link href="https://bitbucket.org/mshockwave/llvm-spirv" target="_blank">
+          Source Code&nbsp
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        <span description>
+          Programming Language Lab (NTHU) led by Prof. Jenq-Kuen Lee is a part of the team in the Mediatek/MOST MLB Project. Among the research work, the team is proposing to add DSP friendly features (such as fixed-point type and complex type) to OpenCL 3. The proposals from NTHU team were presented at Khronos f2f meetings at Houston (Oct 2015), Seattle (Jan 2016), Frankfurt (April 2016), and Seoul (Sep 2016), respectively. Min-Yih participated in the design and discussion for DSP features integrating fixed-point types and related arithmetic operations. In addition, Min-Yih finished the first reference design for this feature by revising the code from the clang, LLVM, and libclcxx library in Khronos’ previous reference design. The new reference design toolchain would consume OpenCL code and emit SPIR-V binary code which contains new fixed-point opcode that makes underlying hardware perform more power-efficient arithmetic.
+        </span>
+      </paper-item>
+
+      <paper-item>
+        <h2>
+          Support OpenCL 2.0 Compiler on LLVM for Multi-Core GPGPUsim Simulations
+        </h2>
+        <span description>
+          GPGPUSim has been widely used in many academic researches related to GPU computations. Min-Yih Hsu and other team members build a compiler that compiles newer versions of OpenCL 2.0 programs, which are not supported by current GPGPUSim version yet, into NVIDIA PTX assembly code. Min-Yih Hsu is responsible for implementing features that are related to OpenCL work group operations (e.g. work_group_broadcast API) and device side kernel enqueue (i.e. enqueue_kernel API) introduced in OpenCL 2.0. Note that OpenCL 2.0 allows dynamic enqueuer to support more flexible parallel paradigms. The work mainly upgraded the 3.7 version of clang, LLVM and libclc, which only supported OpenCL up to version 1.1.
+        </span>
+      </paper-item>
+
+      <paper-item>
+        <h2>
+          Hydra LLVM: Instruction Selection with Threads
+        </h2>
+        <a link href="https://bitbucket.org/mshockwave/hydra-llvm" target="_blank">
+          Source Code&nbsp
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        <span description>
+          In some scenarios, just-in-time(JIT) compiler to name a few, compilation time may become a key factor of overall performance. Also, instruction selection usually takes the most time among other compiler procedures. Hydra LLVM, as Min-Yih Hsu’s undergraduate project, try to solve this problem by parallelizing the instruction selection process by threads. Also, he got plenty of useful advices that are worth taking from the discussion thread he posted about this project on the LLVM mailing list.
+        </span>
+      </paper-item>
+
+      <paper-item>
+        <h2>
+          MIPS-R3000 CPU Simulator
+        </h2>
+        <a link href="https://github.com/mshockwave/MIPS-R3000-CPU-Simulator" target="_blank">
+          Source Code&nbsp
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        <span description>
+          As the project in the Computer Architecture class Min-Yih Hsu took, he implemented a simple MIPS CPU simulator that has 34 instructions, including arithmetic and memory operations, and a 5 stages pipeline which supports branch prefetching and ID (Instruction Decoding) stage forwarding. It is worth noticing that he used multi-thread programming to parallelize the five pipeline stages, such that the simulator can even simulate the instruction level parallelism behaviors benefit from pipeline design in real-world CPUs.
+        </span>
+      </paper-item>
+
+      <paper-item>
+        <h2>
+          MIPS-R3000 Assembler
+        </h2>
+        <a link href="https://github.com/mshockwave/MIPS-R3000-Assembler" target="_blank">
+          Source Code&nbsp
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        <span description>
+          In aid of the MIPS-R3000 simulator mentioned above, Min-Yih Hsu built a simple assembler that transforms human readable MIPS-R3000 assembly code into binary format. The assembler leveraged the famous parser library ANTLR4, which is also adopted by one of the compilers in the Android Open Source Project(AOSP).
+        </span>
+      </paper-item>
+    </div>
+
+  </template>
+  <script>
+    class ProjectPage extends Polymer.Element {
+      static get is(){ return 'project-page'; }
+    }
+
+    window.customElements.define(ProjectPage.is, ProjectPage);
+  </script>
+</dom-module>
