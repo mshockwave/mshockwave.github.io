@@ -15,14 +15,6 @@
     "src/page/experience-page.html": {
       "type": "document",
       "weight": 1
-    },
-    "src/page/publication-page.html": {
-      "type": "document",
-      "weight": 1
-    },
-    "src/page/project-page.html": {
-      "type": "document",
-      "weight": 1
     }
   },
   "src/page/profile-page.html": {},
