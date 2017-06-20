@@ -3,6 +3,8 @@
 <link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
@@ -13,8 +15,6 @@
 <link rel="import" href="../element/vertical-resize-title.html">
 <link rel="import" href="profile-page.html">
 <link rel="import" href="experience-page.html">
-<link rel="import" href="publication-page.html">
-<link rel="import" href="project-page.html">
 
 <dom-module id="landing-page">
   <template>
@@ -61,6 +61,13 @@
           margin: 0 10px;
         };
       }
+      paper-tab a,
+      paper-tab a:visited {
+        color: inherit;
+        text-transform: inherit;
+        text-decoration: inherit;
+        height: unset;
+      }
 
       [main-title]{
         font-size: 3em;
@@ -91,6 +98,13 @@
         font-size: 1.2em;
       }
     </style>
+
+    <app-location
+      route="{{_appRoute}}"></app-location>
+    <app-route
+      route="[[_appRoute]]"
+      pattern="/:page"
+      data="{{_routeData}}"></app-route>
     
     <!-- Put here to get higher z-index -->
     <paper-dialog id="contactDialog"
@@ -122,11 +136,18 @@
         <app-toolbar>
           <paper-tabs bottom-item
             selected="{{_currentPage}}"
+            attr-for-selected="name"
             scrollable
             hide-scroll-buttons>
-            <paper-tab>Profile</paper-tab>
-            <paper-tab>Publications</paper-tab>
-            <paper-tab>Projects</paper-tab>
+            <paper-tab link name="profile">
+              <a href="/profile">Profile</a>
+            </paper-tab>
+            <paper-tab link name="publications">
+              <a href="/publications">Publications</a>
+            </paper-tab>
+            <paper-tab link name="projects">
+              <a href="/projects">Projects</a>
+            </paper-tab>
           </paper-tabs>
           <div condensed-title>
             [[_bannerText.condensedTitle]]
@@ -143,16 +164,20 @@
         </div>
       </app-header>
 
-      <iron-pages selected="[[_currentPage]]">
-        <div id="landingContent">
+      <iron-pages selected="[[_currentPage]]"
+        attr-for-selected="name">
+        <div id="landingContent"
+          name="profile">
           <profile-page 
             on-show-contact="_onShowContact"></profile-page>
           <experience-page></experience-page>
         </div>
 
-        <publication-page></publication-page>
+        <publication-page
+          name="publications"></publication-page>
 
-        <project-page></project-page>
+        <project-page
+          name="projects"></project-page>
       </iron-pages>
     </app-header-layout>
 
@@ -183,9 +208,18 @@
         };
       }
 
+      static get _lazyLoadedFiles() {
+        return {
+          'profile': '',
+          'publications': 'publication-page.html',
+          'projects': 'project-page.html'
+        };
+      }
+
       static get observers(){
         return [
-          '_onPageChanged(_currentPage)'
+          '_onPageChanged(_currentPage)',
+          '_onRoutePageChanged(_routeData.page)'
         ];
       }
 
@@ -193,23 +227,23 @@
         return this.shadowRoot.querySelector('app-header');
       }
 
-      _computeBannerText(pageIndex){
-        switch(pageIndex){
-          case 0:
+      _computeBannerText(pageName){
+        switch(pageName){
+          case 'profile':
             return {
               title: '{ Believe in Code }',
               subTitle: 'Min-Yih Hsu',
               condensedTitle: 'Profile'
             };
 
-          case 1:
+          case 'publications':
             return {
               title: '/* Publications */',
               subTitle: '',
               condensedTitle: 'Publications'
             };
 
-          case 2:
+          case 'projects':
             return {
               title: '<<< Projects >>>',
               subTitle: '',
@@ -225,10 +259,20 @@
         }
       }
 
-      _onPageChanged(pageIndex){
-        // Change Theme
-        switch(pageIndex){
-          case 0:{
+      _onPageChanged(pageName){
+        // Lazily Load Fragments
+        const file = LandingPage._lazyLoadedFiles[pageName];
+        if(file && file.length > 0){
+          Polymer.importHref(
+            this.resolveUrl(file),
+            null, null,
+            true
+          );
+        }
+
+        // Update Theme
+        switch(pageName){
+          case 'profile':{
             this.updateStyles({
               '--main-banner-background': '#607D8B',
               '--main-banner-color': 'white',
@@ -237,7 +281,7 @@
             break;
           }
 
-          case 1:{
+          case 'publications':{
             this.updateStyles({
               '--main-banner-background': '#00796B',
               '--main-banner-color': 'white',
@@ -246,7 +290,7 @@
             break;
           }
 
-          case 2:{
+          case 'projects':{
             this.updateStyles({
               '--main-banner-background': '#388E3C',
               '--main-banner-color': 'white',
@@ -255,6 +299,10 @@
             break;
           }
         }
+      }
+
+      _onRoutePageChanged(routePage){
+        this._currentPage = routePage || 'profile';
       }
     }
 
