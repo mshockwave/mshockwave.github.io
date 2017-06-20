@@ -24,6 +24,7 @@
     "manifest.json",
     "bower_components/webcomponentsjs/*",
     "404.html",
+    "CNAME",
     "bower_components/webcomponentsjs/*.js"
   ],
   "builds": [
