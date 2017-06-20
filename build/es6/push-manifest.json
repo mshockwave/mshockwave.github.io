@@ -19,10 +19,15 @@
     "src/page/publication-page.html": {
       "type": "document",
       "weight": 1
+    },
+    "src/page/project-page.html": {
+      "type": "document",
+      "weight": 1
     }
   },
   "src/page/profile-page.html": {},
   "src/page/experience-page.html": {},
   "src/page/publication-page.html": {},
+  "src/page/project-page.html": {},
   "src/element/vertical-resize-title.html": {}
 }
