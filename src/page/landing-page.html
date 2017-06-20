@@ -5,6 +5,7 @@
 <link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/paper-styles/color.html">
 <link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../../bower_components/paper-tabs/paper-tab.html">
@@ -12,12 +13,17 @@
 <link rel="import" href="../element/vertical-resize-title.html">
 <link rel="import" href="profile-page.html">
 <link rel="import" href="experience-page.html">
+<link rel="import" href="publication-page.html">
 
 <dom-module id="landing-page">
   <template>
     <style include="iron-flex iron-flex-alignment">
       :host {
         display: block;
+
+        --main-banner-color: white;
+        --main-banner-background: #607D8B;
+        --condensed-banner-background: #AB47BC;
       }
 
       app-header-layout {
@@ -35,11 +41,11 @@
       app-header {
         @apply --layout-horizontal;
         @apply --layout-center;
-        background-color: #607D8B;
-        color: white;
+        background-color: var(--main-banner-background);
+        color: var(--main-banner-color);
         height: 350px;
         --app-header-background-rear-layer: {
-          background-color: #AB47BC;
+          background-color: var(--condensed-banner-background);
         };
       }
 
@@ -66,10 +72,17 @@
         font-weight: 200;
       }
 
-      #contentArea {
+      iron-pages {
+        width: 100vw;
+      }
+
+      #landingContent {
+        @apply --layout-vertical;
+        @apply --layout-center;
+        width: 100%;
         padding-top: 40px;
       }
-      #contentArea > *{
+      #landingContent > *{
         margin-bottom: 40px;
       }
 
@@ -107,33 +120,37 @@
         effects="blend-background vertical-resize-title waterfall">
         <app-toolbar>
           <paper-tabs bottom-item
-            selected="0"
+            selected="{{_currentPage}}"
             scrollable
             hide-scroll-buttons>
             <paper-tab>Profile</paper-tab>
-            <paper-tab>Projects</paper-tab>
             <paper-tab>Publications</paper-tab>
+            <paper-tab>Projects</paper-tab>
           </paper-tabs>
           <div condensed-title>
-            Min-Yih Hsu
+            [[_bannerText.condensedTitle]]
           </div>
         </app-toolbar>
 
         <div class="tall layout vertical center center-justified">
           <h1 main-title>
-            {&nbspBelieve in Code&nbsp}
+            [[_bannerText.title]]
           </h1>
-          <span sub-title>Min-Yih Hsu</span>
+          <span sub-title>
+            [[_bannerText.subTitle]]
+          </span>
         </div>
       </app-header>
 
-      <div style="width: 100vw;" 
-        id="contentArea"
-        class="layout vertical center">
-        <profile-page 
-          on-show-contact="_onShowContact"></profile-page>
-        <experience-page></experience-page>
-      </div>
+      <iron-pages selected="[[_currentPage]]">
+        <div id="landingContent">
+          <profile-page 
+            on-show-contact="_onShowContact"></profile-page>
+          <experience-page></experience-page>
+        </div>
+
+        <publication-page></publication-page>
+      </iron-pages>
     </app-header-layout>
 
   </template>
@@ -147,6 +164,78 @@
       static get is() { return 'landing-page'; }
       _onShowContact(){
         this.$.contactDialog.open();
+      }
+
+      static get properties(){
+        return {
+          _currentPage: {
+            type: Number,
+            value: 0
+          },
+
+          _bannerText: {
+            type: Object,
+            computed: '_computeBannerText(_currentPage)'
+          }
+        };
+      }
+
+      static get observers(){
+        return [
+          '_onPageChanged(_currentPage)'
+        ];
+      }
+
+      get _appHeader(){
+        return this.shadowRoot.querySelector('app-header');
+      }
+
+      _computeBannerText(pageIndex){
+        switch(pageIndex){
+          case 0:
+            return {
+              title: '{ Believe in Code }',
+              subTitle: 'Min-Yih Hsu',
+              condensedTitle: 'Profile'
+            };
+
+          case 1:
+            return {
+              title: '/* Publications */',
+              subTitle: '',
+              condensedTitle: 'Publications'
+            };
+
+          default:
+            return{
+              title: 'Dummy',
+              subTitle: 'dummy',
+              condensedTitle: 'DUMMY'
+            };
+        }
+      }
+
+      _onPageChanged(pageIndex){
+        // Change Theme
+        switch(pageIndex){
+          case 0:{
+            this.updateStyles({
+              '--main-banner-background': '#607D8B',
+              '--main-banner-color': 'white',
+              '--condensed-banner-background': '#AB47BC'
+            });
+            break;
+          }
+
+          case 1:{
+            this.updateStyles({
+              '--main-banner-background': '#00796B',
+              '--main-banner-color': 'white',
+              '--condensed-banner-background': '#3F51B5'
+            });
+            break;
+          }
+        }
       }
     }
 
