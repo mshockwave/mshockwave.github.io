@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["index.html","dfa8c574bf1069c35fd26340d1cb7456"],["src/element/vertical-resize-title.html","e9794270ae7856db904a1afd5a6404d0"],["src/page/experience-page.html","08deea6bd2478ccb42adb28d6d2df856"],["src/page/landing-page.html","e385887f95b2a6a6c71f03aa5be26dbf"],["src/page/profile-page.html","94c6173d8c5563c93394c0b2857d3ee1"],["src/page/project-page.html","9aef5ed71b8250961b91fef9d5f09eb1"],["src/page/publication-page.html","b94d982ae832a757f21a74d543cc5073"]];
+var precacheConfig = [["index.html","dfa8c574bf1069c35fd26340d1cb7456"],["src/element/vertical-resize-title.html","e9794270ae7856db904a1afd5a6404d0"],["src/page/experience-page.html","08deea6bd2478ccb42adb28d6d2df856"],["src/page/landing-page.html","33098a14b372f625bfe390dc048c99fd"],["src/page/profile-page.html","94c6173d8c5563c93394c0b2857d3ee1"],["src/page/project-page.html","9aef5ed71b8250961b91fef9d5f09eb1"],["src/page/publication-page.html","b94d982ae832a757f21a74d543cc5073"]];
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 
 
