@@ -73,6 +73,24 @@
         margin-bottom: 20px;
         margin-top: 5px;
       }
+      /* Large Mobile Screen */
+      @media (max-width: 425px) {
+        [main-title] {
+          font-size: 2.8em;
+        }
+      }
+      /* Medium Mobile Screen */
+      @media (max-width: 375px) {
+        [main-title] {
+          font-size: 2.5em;
+        }
+      }
+      /* Small Mobile Screen */
+      @media (max-width: 320px) {
+        [main-title] {
+          font-size: 2em;
+        }
+      }
       [sub-title] {
         font-size: 1.7em;
         font-weight: 200;
@@ -166,7 +184,7 @@
           <h1 main-title>
             [[_bannerText.title]]
           </h1>
-          <span sub-title>
+          <span sub-title style="margin-bottom: 10px;">
             [[_bannerText.subTitle]]
           </span>
         </div>
