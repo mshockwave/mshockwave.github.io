@@ -1,14 +1,33 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../../bower_components/paper-styles/color.html">
 
 <dom-module id="publication-page">
   <template>
     <style include="iron-flex iron-flex-alignment">
-       :host {
+      :host {
         display: block;
         width: 100%;
+      }
+
+      #container {
+        padding: 30px 20vw;
+      }
+
+      @media (max-width: 768px) {
+        #container {
+          padding: 15px 5vw;
+        }
+      }
+
+      a,
+      a:visited {
+        text-transform: none;
+        text-decoration: none;
+        color: unset;
       }
 
       paper-item {
@@ -26,8 +45,7 @@
       }
     </style>
 
-    <div style="padding: 30px 20vw;" 
-      class="layout vertical start">
+    <div id="container" class="layout vertical start">
       <h1>Papers</h1>
       <paper-item>
         <span>
@@ -54,10 +72,14 @@
       <paper-item>
         <span>
         Shockwave Base.
-        <a href="http://mshockwave.blogspot.tw/" target="_blank">
-          http://mshockwave.blogspot.tw/
+        <br />
+        <a href="http://mshockwave.blogspot.tw/" target="_blank"
+          style="margin-left: 0.5em;">
+          Link&nbsp
+          <iron-icon icon="open-in-new"></iron-icon>
         </a>
-        . (Since 2014)
+        <br />
+        (Since 2014)
         </span>
       </paper-item>
     </div>
