@@ -25,12 +25,36 @@
         color: white;
         font-size: 1.1em;
       }
+
+      #thumbnail {
+        width: 37%;
+        margin-bottom: 0;
+      }
+      #bio {
+        margin-left: 3%;
+        width: 60%;
+      }
+
+      /* Mobile Page */
+      @media (max-width: 768px) {
+        :host {
+          max-width: 100%;
+        }
+
+        #thumbnail {
+          width: 70%;
+          margin-bottom: 30px;
+        }
+        #bio {
+          margin-left: 0;
+          width: 80%;
+        }
+      }
     </style>
 
-    <div class="layout horizontal start">
-      <img src="../../images/formal3-small.jpg"
-        style="width: 37%;"/>
-      <p style="margin-left: 3%;">
+    <div class="layout horizontal start wrap center-justified">
+      <img id="thumbnail" src="../../images/formal3-small.jpg" />
+      <p id="bio">
         <span>Min-Yih Hsu (Bekket McClane)</span>
         <br/><br />
         <span>

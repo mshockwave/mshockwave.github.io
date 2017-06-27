@@ -10,7 +10,7 @@
 <dom-module id="experience-page">
   <template>
     <style include="iron-flex iron-flex-alignment app-grid-style">
-       :host {
+      :host {
         display: block;
         width: 70%;
 
@@ -33,6 +33,20 @@
       .app-grid > [chrono-title],
       .app-grid > [chrono-divide-line] {
         @apply --app-grid-expandible-item;
+      }
+
+      @media (max-width: 768px) {
+        :host {
+          width: 80%;
+
+          --app-grid-columns: 1;
+          --app-grid-expandible-item-columns: 1;
+          --app-grid-gutter: 0;
+        }
+
+        [chrono-title] {
+          width: 100%;
+        }
       }
 
       [chrono-title] {
