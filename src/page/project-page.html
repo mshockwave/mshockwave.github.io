@@ -15,8 +15,27 @@
         width: 100%;
       }
 
+      #pageContainer {
+        padding: 30px 20%;
+      }
+
+      @media (max-width: 768px) {
+        #pageContainer {
+          padding: 30px 10%;
+        }
+      }
+
       paper-card {
         margin: 14px;
+      }
+      paper-card .card-content img {
+        width: 10vw;
+      }
+
+      @media (max-width: 768px) {
+        paper-card .card-content img {
+          width: 40vw;
+        } 
       }
 
       a,
@@ -52,25 +71,33 @@
       }
     </style>
 
-    <div class="layout vertical start"
-      style="width: 60%; padding: 30px 20%;">
-      <div class="layout horizontal center">
+    <div id="pageContainer" class="layout vertical start">
+      <div class="layout horizontal center center-justified wrap"
+        style="width: 100%;">
         <paper-card>
           <div class="card-content layout vertical center">
+            <img src="../../images/github-logo.png"/>
+          </div>
+          <div class="card-actions">
             <a href="https://github.com/mshockwave" target="_blank">
-            <img src="../../images/github-logo.png"
-              style="width: 10vw;"/>
-            <h2>mshockwave</h2>
+              <h2>
+                mshockwave
+                <iron-icon icon="open-in-new"></iron-icon>
+              </h2>
             </a>
           </div>
         </paper-card>
 
         <paper-card>
           <div class="card-content layout vertical center">
+            <img src="../../images/bitbucket-logo.png"/>
+          </div>
+          <div class="card-actions">
             <a href="https://bitbucket.org/mshockwave" target="_blank">
-            <img src="../../images/bitbucket-logo.png"
-              style="width: 10vw;"/>
-            <h2>mshockwave</h2>
+              <h2>
+                mshockwave
+                <iron-icon icon="open-in-new"></iron-icon>
+              </h2>
             </a>
           </div>
         </paper-card>
