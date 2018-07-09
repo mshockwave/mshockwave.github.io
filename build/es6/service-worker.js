@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["index.html","d3cb2d09a7f965e0d7fed28ac65b5875"],["src/element/vertical-resize-title.html","b056e0ab137b8868506ce127edaf39a8"],["src/page/experience-page.html","76aac86edebc341926042846d81e5fa5"],["src/page/landing-page.html","1cd31e3186c3a7eee227d11e4b6929d6"],["src/page/profile-page.html","c34c93659ffb495e9a0cc4beeff5042e"],["src/page/project-page.html","b1762aadbde99101e222fb851e96d4d0"],["src/page/publication-page.html","285c42dcb14925e3898b0d163f85f64f"]];
+var precacheConfig = [["index.html","bec39d5ebc4e97900060ec3d5d198200"],["src/element/vertical-resize-title.html","7e7d9d9553183ddc25edea6eaadcd3fa"],["src/page/experience-page.html","ea15641a9cf58301c621edda04ae493c"],["src/page/landing-page.html","4f7461bb03931d62ad6d79639a8c330f"],["src/page/profile-page.html","6891934b2834b18b3ee467c4d12a3e3b"],["src/page/project-page.html","b750d23075dc6e761f3f326494683cba"],["src/page/publication-page.html","57ea36f35dd5d60850f84998f912de7d"]];
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 
 
@@ -65,7 +65,7 @@ var cleanResponse = function (originalResponse) {
       Promise.resolve(originalResponse.body) :
       originalResponse.blob();
 
-    return bodyPromise.then(function(body) {
+    return bodyPromise.then(function (body) {
       // new Response() is happy when passed either a stream or a Blob.
       return new Response(body, {
         headers: originalResponse.headers,
@@ -99,7 +99,7 @@ var isPathWhitelisted = function (whitelist, absoluteUrlString) {
 
     // Otherwise compare each path regex to the path of the URL passed in.
     var path = (new URL(absoluteUrlString)).pathname;
-    return whitelist.some(function(whitelistedPathRegex) {
+    return whitelist.some(function (whitelistedPathRegex) {
       return path.match(whitelistedPathRegex);
     });
   };
@@ -112,15 +112,15 @@ var stripIgnoredUrlParameters = function (originalUrl,
 
     url.search = url.search.slice(1) // Exclude initial '?'
       .split('&') // Split into an array of 'key=value' strings
-      .map(function(kv) {
+      .map(function (kv) {
         return kv.split('='); // Split each 'key=value' string into a [key, value] array
       })
-      .filter(function(kv) {
-        return ignoreUrlParametersMatching.every(function(ignoredRegex) {
+      .filter(function (kv) {
+        return ignoreUrlParametersMatching.every(function (ignoredRegex) {
           return !ignoredRegex.test(kv[0]); // Return true iff the key doesn't match any of the regexes.
         });
       })
-      .map(function(kv) {
+      .map(function (kv) {
         return kv.join('='); // Join each [key, value] array into a 'key=value' string
       })
       .join('&'); // Join the array of 'key=value' strings into a string with '&' in between each
@@ -131,7 +131,7 @@ var stripIgnoredUrlParameters = function (originalUrl,
 
 var hashParamName = '_sw-precache';
 var urlsToCacheKeys = new Map(
-  precacheConfig.map(function(item) {
+  precacheConfig.map(function (item) {
     var relativeUrl = item[0];
     var hash = item[1];
     var absoluteUrl = new URL(relativeUrl, self.location);
@@ -141,25 +141,25 @@ var urlsToCacheKeys = new Map(
 );
 
 function setOfCachedUrls(cache) {
-  return cache.keys().then(function(requests) {
-    return requests.map(function(request) {
+  return cache.keys().then(function (requests) {
+    return requests.map(function (request) {
       return request.url;
     });
-  }).then(function(urls) {
+  }).then(function (urls) {
     return new Set(urls);
   });
 }
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return setOfCachedUrls(cache).then(function(cachedUrls) {
+    caches.open(cacheName).then(function (cache) {
+      return setOfCachedUrls(cache).then(function (cachedUrls) {
         return Promise.all(
-          Array.from(urlsToCacheKeys.values()).map(function(cacheKey) {
+          Array.from(urlsToCacheKeys.values()).map(function (cacheKey) {
             // If we don't have a key matching url in the cache already, add it.
             if (!cachedUrls.has(cacheKey)) {
               var request = new Request(cacheKey, {credentials: 'same-origin'});
-              return fetch(request).then(function(response) {
+              return fetch(request).then(function (response) {
                 // Bail out of installation unless we get back a 200 OK for
                 // every request.
                 if (!response.ok) {
@@ -167,7 +167,7 @@ self.addEventListener('install', function(event) {
                     'response with status ' + response.status);
                 }
 
-                return cleanResponse(response).then(function(responseToCache) {
+                return cleanResponse(response).then(function (responseToCache) {
                   return cache.put(cacheKey, responseToCache);
                 });
               });
@@ -175,7 +175,7 @@ self.addEventListener('install', function(event) {
           })
         );
       });
-    }).then(function() {
+    }).then(function () {
       
       // Force the SW to transition from installing -> active state
       return self.skipWaiting();
@@ -184,21 +184,21 @@ self.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
   var setOfExpectedUrls = new Set(urlsToCacheKeys.values());
 
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.keys().then(function(existingRequests) {
+    caches.open(cacheName).then(function (cache) {
+      return cache.keys().then(function (existingRequests) {
         return Promise.all(
-          existingRequests.map(function(existingRequest) {
+          existingRequests.map(function (existingRequest) {
             if (!setOfExpectedUrls.has(existingRequest.url)) {
               return cache.delete(existingRequest);
             }
           })
         );
       });
-    }).then(function() {
+    }).then(function () {
       
       return self.clients.claim();
       
@@ -207,7 +207,7 @@ self.addEventListener('activate', function(event) {
 });
 
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
   if (event.request.method === 'GET') {
     // Should we call event.respondWith() inside this fetch event handler?
     // This needs to be determined synchronously, which will give other fetch
@@ -242,14 +242,14 @@ self.addEventListener('fetch', function(event) {
     // event.respondWith(), using the appropriate cache key.
     if (shouldRespond) {
       event.respondWith(
-        caches.open(cacheName).then(function(cache) {
-          return cache.match(urlsToCacheKeys.get(url)).then(function(response) {
+        caches.open(cacheName).then(function (cache) {
+          return cache.match(urlsToCacheKeys.get(url)).then(function (response) {
             if (response) {
               return response;
             }
             throw Error('The cached response that was expected is missing.');
           });
-        }).catch(function(e) {
+        }).catch(function (e) {
           // Fall back to just fetch()ing the request if some unexpected error
           // prevented the cached response from being valid.
           console.warn('Couldn\'t serve response for "%s" from cache: %O', event.request.url, e);
