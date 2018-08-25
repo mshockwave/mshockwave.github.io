@@ -1,39 +1,78 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/page/landing-page.html",
-  "fragments": [
-    "src/page/profile-page.html",
-    "src/page/experience-page.html",
-    "src/page/publication-page.html",
-    "src/page/project-page.html",
-
-    "src/element/vertical-resize-title.html"
-  ],
+  "shell": "src/page/landing-page.js",
   "sources": [
     "src/**/*",
-    "images/**/*",
-    "bower.json"
+    "images/**/*"
   ],
   "extraDependencies": [
     "manifest.json",
-    "bower_components/webcomponentsjs/*",
+    "node_modules/@webcomponents/webcomponentsjs/*.js",
+    "!node_modules/@webcomponents/webcomponentsjs/gulpfile.js",
+    "node_modules/@webcomponents/webcomponentsjs/bundles/*.js",
     "404.html",
     "CNAME"
   ],
   
-  "lint": {
-    "rules": [
-      "polymer-2"
-    ]
-  },
   "builds": [
     {
-      "preset": "es6-bundled",
-      "name": "es6"
+      "name": "esm-bundled",
+      "browserCapabilities": [
+        "es2015",
+        "modules"
+      ],
+      "js": {
+        "minify": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
     },
     {
-      "preset": "es5-bundled",
-      "name": "es5"
+      "name": "es6-bundled",
+      "browserCapabilities": [
+        "es2015"
+      ],
+      "js": {
+        "minify": true,
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
+    },
+    {
+      "name": "es5-bundled",
+      "js": {
+        "minify": true,
+        "compile": true,
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
     }
-  ]
+  ],
+  "moduleResolution": "node",
+  "npm": true,
+  "lint": {
+    "rules": [
+      "polymer-3"
+    ]
+  }
 }
