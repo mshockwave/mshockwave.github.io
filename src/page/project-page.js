@@ -1,14 +1,15 @@
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
-<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/paper-item/paper-item.html">
-<link rel="import" href="../../bower_components/paper-styles/color.html">
-
-<dom-module id="project-page">
-  <template>
+import { PolymerElement } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import '../../node_modules/@polymer/iron-flex-layout/iron-flex-layout-classes.js';
+import '../../node_modules/@polymer/iron-flex-layout/iron-flex-layout.js';
+import '../../node_modules/@polymer/iron-icon/iron-icon.js';
+import '../../node_modules/@polymer/iron-icons/iron-icons.js';
+import '../../node_modules/@polymer/paper-card/paper-card.js';
+import '../../node_modules/@polymer/paper-item/paper-item.js';
+import '../../node_modules/@polymer/paper-styles/color.js';
+import { html } from '../../node_modules/@polymer/polymer/lib/utils/html-tag.js';
+class ProjectPage extends PolymerElement {
+  static get template() {
+    return html`
     <style include="iron-flex iron-flex-alignment">
       :host {
         display: block;
@@ -72,11 +73,10 @@
     </style>
 
     <div id="pageContainer" class="layout vertical start">
-      <div class="layout horizontal center center-justified wrap"
-        style="width: 100%;">
+      <div class="layout horizontal center center-justified wrap" style="width: 100%;">
         <paper-card>
           <div class="card-content layout vertical center">
-            <img src="../../images/github-logo.png"/>
+            <img src="../../images/github-logo.png">
           </div>
           <div class="card-actions">
             <a href="https://github.com/mshockwave" target="_blank">
@@ -90,7 +90,7 @@
 
         <paper-card>
           <div class="card-content layout vertical center">
-            <img src="../../images/bitbucket-logo.png"/>
+            <img src="../../images/bitbucket-logo.png">
           </div>
           <div class="card-actions">
             <a href="https://bitbucket.org/mshockwave" target="_blank">
@@ -111,11 +111,11 @@
         <h2>
           Reference Design for the Next Generation OpenCL Fixed Point Features
         </h2>
-        <a link href="https://bitbucket.org/mshockwave/llvm-spirv" target="_blank">
-          Source Code&nbsp
+        <a link="" href="https://bitbucket.org/mshockwave/llvm-spirv" target="_blank">
+          Source Code&nbsp;
           <iron-icon icon="open-in-new"></iron-icon>
         </a>
-        <span description>
+        <span description="">
           Programming Language Lab (NTHU) led by Prof. Jenq-Kuen Lee is a part of the team in the Mediatek/MOST MLB Project. Among the research work, the team is proposing to add DSP friendly features (such as fixed-point type and complex type) to OpenCL 3. The proposals from NTHU team were presented at Khronos f2f meetings at Houston (Oct 2015), Seattle (Jan 2016), Frankfurt (April 2016), and Seoul (Sep 2016), respectively. Min-Yih participated in the design and discussion for DSP features integrating fixed-point types and related arithmetic operations. In addition, Min-Yih finished the first reference design for this feature by revising the code from the clang, LLVM, and libclcxx library in Khronos’ previous reference design. The new reference design toolchain would consume OpenCL code and emit SPIR-V binary code which contains new fixed-point opcode that makes underlying hardware perform more power-efficient arithmetic.
         </span>
       </paper-item>
@@ -124,7 +124,7 @@
         <h2>
           Support OpenCL 2.0 Compiler on LLVM for Multi-Core GPGPUsim Simulations
         </h2>
-        <span description>
+        <span description="">
           GPGPUSim has been widely used in many academic researches related to GPU computations. Min-Yih Hsu and other team members build a compiler that compiles newer versions of OpenCL 2.0 programs, which are not supported by current GPGPUSim version yet, into NVIDIA PTX assembly code. Min-Yih Hsu is responsible for implementing features that are related to OpenCL work group operations (e.g. work_group_broadcast API) and device side kernel enqueue (i.e. enqueue_kernel API) introduced in OpenCL 2.0. Note that OpenCL 2.0 allows dynamic enqueuer to support more flexible parallel paradigms. The work mainly upgraded the 3.7 version of clang, LLVM and libclc, which only supported OpenCL up to version 1.1.
         </span>
       </paper-item>
@@ -133,11 +133,11 @@
         <h2>
           Hydra LLVM: Instruction Selection with Threads
         </h2>
-        <a link href="https://bitbucket.org/mshockwave/hydra-llvm" target="_blank">
-          Source Code&nbsp
+        <a link="" href="https://bitbucket.org/mshockwave/hydra-llvm" target="_blank">
+          Source Code&nbsp;
           <iron-icon icon="open-in-new"></iron-icon>
         </a>
-        <span description>
+        <span description="">
           In some scenarios, just-in-time(JIT) compiler to name a few, compilation time may become a key factor of overall performance. Also, instruction selection usually takes the most time among other compiler procedures. Hydra LLVM, as Min-Yih Hsu’s undergraduate project, try to solve this problem by parallelizing the instruction selection process by threads. Also, he got plenty of useful advices that are worth taking from the discussion thread he posted about this project on the LLVM mailing list.
         </span>
       </paper-item>
@@ -146,11 +146,11 @@
         <h2>
           MIPS-R3000 CPU Simulator
         </h2>
-        <a link href="https://github.com/mshockwave/MIPS-R3000-CPU-Simulator" target="_blank">
-          Source Code&nbsp
+        <a link="" href="https://github.com/mshockwave/MIPS-R3000-CPU-Simulator" target="_blank">
+          Source Code&nbsp;
           <iron-icon icon="open-in-new"></iron-icon>
         </a>
-        <span description>
+        <span description="">
           As the project in the Computer Architecture class Min-Yih Hsu took, he implemented a simple MIPS CPU simulator that has 34 instructions, including arithmetic and memory operations, and a 5 stages pipeline which supports branch prefetching and ID (Instruction Decoding) stage forwarding. It is worth noticing that he used multi-thread programming to parallelize the five pipeline stages, such that the simulator can even simulate the instruction level parallelism behaviors benefit from pipeline design in real-world CPUs.
         </span>
       </paper-item>
@@ -159,22 +159,19 @@
         <h2>
           MIPS-R3000 Assembler
         </h2>
-        <a link href="https://github.com/mshockwave/MIPS-R3000-Assembler" target="_blank">
-          Source Code&nbsp
+        <a link="" href="https://github.com/mshockwave/MIPS-R3000-Assembler" target="_blank">
+          Source Code&nbsp;
           <iron-icon icon="open-in-new"></iron-icon>
         </a>
-        <span description>
+        <span description="">
           In aid of the MIPS-R3000 simulator mentioned above, Min-Yih Hsu built a simple assembler that transforms human readable MIPS-R3000 assembly code into binary format. The assembler leveraged the famous parser library ANTLR4, which is also adopted by one of the compilers in the Android Open Source Project(AOSP).
         </span>
       </paper-item>
     </div>
+`;
+  }
 
-  </template>
-  <script>
-    class ProjectPage extends Polymer.Element {
-      static get is(){ return 'project-page'; }
-    }
+  static get is(){ return 'project-page'; }
+}
 
-    window.customElements.define(ProjectPage.is, ProjectPage);
-  </script>
-</dom-module>
+window.customElements.define(ProjectPage.is, ProjectPage);

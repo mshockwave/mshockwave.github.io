@@ -1,12 +1,13 @@
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
-<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../../bower_components/paper-item/paper-item.html">
-<link rel="import" href="../../bower_components/paper-styles/color.html">
-
-<dom-module id="publication-page">
-  <template>
+import { PolymerElement } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import '../../node_modules/@polymer/iron-flex-layout/iron-flex-layout-classes.js';
+import '../../node_modules/@polymer/iron-icon/iron-icon.js';
+import '../../node_modules/@polymer/iron-icons/iron-icons.js';
+import '../../node_modules/@polymer/paper-item/paper-item.js';
+import '../../node_modules/@polymer/paper-styles/color.js';
+import { html } from '../../node_modules/@polymer/polymer/lib/utils/html-tag.js';
+class PublicationPage extends PolymerElement {
+  static get template() {
+    return html`
     <style include="iron-flex iron-flex-alignment">
       :host {
         display: block;
@@ -72,24 +73,20 @@
       <paper-item>
         <span>
         Shockwave Base.
-        <br />
-        <a href="http://mshockwave.blogspot.tw/" target="_blank"
-          style="margin-left: 0.5em;">
-          Link&nbsp
+        <br>
+        <a href="http://mshockwave.blogspot.tw/" target="_blank" style="margin-left: 0.5em;">
+          Link&nbsp;
           <iron-icon icon="open-in-new"></iron-icon>
         </a>
-        <br />
+        <br>
         (Since 2014)
         </span>
       </paper-item>
     </div>
+`;
+  }
 
-  </template>
-  <script>
-    class PublicationPage extends Polymer.Element {
-      static get is(){ return 'publication-page'; }
-    }
+  static get is(){ return 'publication-page'; }
+}
 
-    window.customElements.define(PublicationPage.is, PublicationPage);
-  </script>
-</dom-module>
+window.customElements.define(PublicationPage.is, PublicationPage);

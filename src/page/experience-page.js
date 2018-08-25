@@ -1,15 +1,16 @@
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
-<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
-<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../../bower_components/paper-styles/color.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
-
-<dom-module id="experience-page">
-  <template>
+import { PolymerElement } from '../../node_modules/@polymer/polymer/polymer-element.js';
+import '../../node_modules/@polymer/app-layout/app-grid/app-grid-style.js';
+import '../../node_modules/@polymer/iron-flex-layout/iron-flex-layout-classes.js';
+import '../../node_modules/@polymer/iron-flex-layout/iron-flex-layout.js';
+import '../../node_modules/@polymer/iron-icon/iron-icon.js';
+import '../../node_modules/@polymer/iron-icons/iron-icons.js';
+import '../../node_modules/@polymer/paper-styles/color.js';
+import '../../node_modules/@polymer/paper-card/paper-card.js';
+import '../../node_modules/@polymer/paper-icon-button/paper-icon-button.js';
+import { html } from '../../node_modules/@polymer/polymer/lib/utils/html-tag.js';
+class ExperiencePage extends PolymerElement {
+  static get template() {
+    return html`
     <style include="iron-flex iron-flex-alignment app-grid-style">
       :host {
         display: block;
@@ -86,98 +87,96 @@
       }
     </style>
 
-    <div list-container class="app-grid">
+    <div list-container="" class="app-grid">
       <h1 style="margin-top: 0; text-align:center; margin-bottom: 0.7em;">
         Experience
       </h1>
 
-      <span chrono-title>2018</span>
-      <paper-card expand-item heading="Started as Ph.D. Student in Computer Science">
+      <span chrono-title="">2018</span>
+      <paper-card expand-item="" heading="Started as Ph.D. Student in Computer Science">
         <div class="card-content layout vertical">
-          <span sub-title>University of California, Irvine (UCI), CA</span>
-          <span sub-title>
+          <span sub-title="">University of California, Irvine (UCI), CA</span>
+          <span sub-title="">
             Advised by Prof. Michael Franz
             <a href="https://www.michaelfranz.com/" target="_blank" tabindex="-1"><paper-icon-button icon="launch"></paper-icon-button></a>
           </span>
         </div>
       </paper-card>
-      <paper-card expand-item heading="Compiler Engineer Intern">
+      <paper-card expand-item="" heading="Compiler Engineer Intern">
         <div class="card-content layout vertical">
-          <span sub-title>MediaTek USA, Woburn, MA. June ~ September</span>
-          <span sub-title>LLVM-based Compiler Development for DSP processors</span>
+          <span sub-title="">MediaTek USA, Woburn, MA. June ~ September</span>
+          <span sub-title="">LLVM-based Compiler Development for DSP processors</span>
         </div>
       </paper-card>
-      <paper-card expand-item heading="B.S. in Computer Science">
+      <paper-card expand-item="" heading="B.S. in Computer Science">
         <div class="card-content layout vertical">
-          <span sub-title>National Tsing Hua University. Hsinchu, Taiwan</span>
-          <span sub-title>
+          <span sub-title="">National Tsing Hua University. Hsinchu, Taiwan</span>
+          <span sub-title="">
             Advised by Prof. Jenq-Kuen Lee
             <a href="http://pllab.cs.nthu.edu.tw/~jklee/" target="_blank" tabindex="-1"><paper-icon-button icon="launch"></paper-icon-button></a>
           </span>
-          <span sub-title>Sep 2014 ~ June 2018</span>
+          <span sub-title="">Sep 2014 ~ June 2018</span>
         </div>
       </paper-card>
       
-      <span chrono-title>2017</span>
-      <paper-card expand-item heading="Compiler Engineer Intern">
+      <span chrono-title="">2017</span>
+      <paper-card expand-item="" heading="Compiler Engineer Intern">
         <div class="card-content layout vertical">
-          <span sub-title>MediaTek USA, Woburn, MA. July ~ October</span>
-          <span sub-title>DSP Compiler Development and Optimization.</span>
+          <span sub-title="">MediaTek USA, Woburn, MA. July ~ October</span>
+          <span sub-title="">DSP Compiler Development and Optimization.</span>
         </div>
       </paper-card>
       <paper-card heading="Speaker">
         <div class="card-content layout vertical">
-          <span sub-title>
+          <span sub-title="">
             EuroLLVM 2017, Saarbrücken, Germany, March
           </span>
-          <span sub-title>
+          <span sub-title="">
             <i>Hydra LLVM: Instruction Selection with Threads</i>(Poster)
           </span>
         </div>
       </paper-card>
       <paper-card heading="Speaker">
         <div class="card-content layout vertical">
-          <span sub-title>
+          <span sub-title="">
             SITCON 2017, Taipei, Taiwan, March
           </span>
-          <span sub-title>
+          <span sub-title="">
             <i>From V8 to Modern Compilers</i>(Talk)
           </span>
         </div>
       </paper-card>
 
-      <div chrono-divide-line></div>
-      <span chrono-title>2016</span>
+      <div chrono-divide-line=""></div>
+      <span chrono-title="">2016</span>
       <paper-card heading="Speaker">
         <div class="card-content layout vertical">
-          <span sub-title>
+          <span sub-title="">
             SITCON 2016, Taipei, Taiwan, March
           </span>
-          <span sub-title>
+          <span sub-title="">
             <i>War of Native Speed on Web</i>(Talk)
           </span>
         </div>
       </paper-card>
 
-      <div chrono-divide-line></div>
-      <span chrono-title>2015</span>
+      <div chrono-divide-line=""></div>
+      <span chrono-title="">2015</span>
       <paper-card heading="Speaker">
         <div class="card-content layout vertical">
-          <span sub-title>
+          <span sub-title="">
             SITCON 2015, Taipei, Taiwan, March
           </span>
-          <span sub-title>
+          <span sub-title="">
             <i>From Android NDK To AOSP</i>(Talk)
           </span>
         </div>
       </paper-card>
     </div>
-  </template>
-  <script>
-    class ExperiencePage extends Polymer.Element {
-      static get is(){ return 'experience-page'; }
-    }
+`;
+  }
 
-    window.customElements.define(ExperiencePage.is, ExperiencePage);
-  </script>
-</dom-module>
+  static get is(){ return 'experience-page'; }
+}
+
+window.customElements.define(ExperiencePage.is, ExperiencePage);
