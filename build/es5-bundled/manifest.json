@@ -1,0 +1,6 @@
+{
+  "name": "mshockwave-personal-website",
+  "short_name": "mshockwave-website",
+  "start_url": "/",
+  "display": "standalone"
+}
