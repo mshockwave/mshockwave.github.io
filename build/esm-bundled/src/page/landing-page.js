@@ -3065,8 +3065,8 @@
         </paper-button>
         <br><br><br>
         <span>
-          I'm currently a computer science major Ph.D. student in UCI, advised by <a href="https://www.michaelfranz.com/" target="_blank">Prof. Michael Franz</a>.&nbsp;
-          I received my B.S. degree in computer science from National Tsing Hua University, Taiwan, in 2018.
+          I'm currently a Ph.D. student major in computer science in UCI, advised by Prof. Michael Franz.&nbsp;
+          I received my Bachelor degree in computer science from National Tsing Hua University, Taiwan, in 2018.
           <br><br>
           My research interests includes: 
           <b>Compilers, High Performance Computing, Security and System Software</b>.
@@ -3078,7 +3078,7 @@
         <br><br>
         <span>
           In my leisure time, I like jogging, coffee brewing, 
-          and listening <a href="https://en.wikipedia.org/wiki/Nightcore" target="_blank">Nightcore</a> music.
+          and listening Nightcore<a href="https://en.wikipedia.org/wiki/Nightcore" target="_blank"><paper-icon-button icon="launch"></paper-icon-button></a> music.
         </span>
       </p>
     </div>
