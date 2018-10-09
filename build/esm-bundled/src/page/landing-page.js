@@ -3013,7 +3013,7 @@
       }
 
       p span {
-        font-size: 1.4em;
+        font-size: 1.3em;
         font-weight: 300;
         line-height: 1.4;
       }
@@ -3053,20 +3053,32 @@
     <div class="layout horizontal start wrap center-justified">
       <img id="thumbnail" src="../../images/formal3-small.jpg">
       <p id="bio">
-        <span>Min-Yih Hsu (Bekket McClane)</span>
+        <span><b>Min-Yih Hsu</b> (Bekket McClane)</span>
         <br><br>
         <span>
-          Research Assistant in Department of Computer Science, National Tsing-Hua University, Hsinchu, Taiwan
+          Ph.D. Student in Donald Bren School of Information and Computer Science, University of California, Irvine.
         </span>
         <br><br>
         <paper-button id="contact" raised="" on-tap="_onContactInfoClick">
           <iron-icon icon="communication:mail-outline"></iron-icon>
           &nbsp;Contact Info
         </paper-button>
-        <br><br>
+        <br><br><br>
+        <span>
+          I'm currently a computer science major Ph.D. student in UCI, advised by <a href="https://www.michaelfranz.com/" target="_blank">Prof. Michael Franz</a>.&nbsp;
+          I received my B.S. degree in computer science from National Tsing Hua University, Taiwan, in 2018.
+          <br><br>
+          My research interests includes: 
+          <b>Compilers, High Performance Computing, Security and System Software</b>.
+        </span>
+        <span>
+          During my undergraduate career, I've published several works regarding LLVM and OpenCL.
+          I have strong compiler background, especially LLVM development, and system programming skills.
+        </span>
         <br><br>
         <span>
-          I have been studying for the bachelor program of computer science at National Tsing Hua University since 2014. I'm currently a research assistant in Programming Language Lab, Department of Computer Science, National Tsing Hua University, Taiwan. Advised by Prof. Jenq-Kuen Lee. I show great interests in embedded system and compiler design. My research work includes extending LLVM for OpenCL 2.0 flow on GPGPUSim, participating in the proposal writeup with a new DSP feature set for on-going Khronos OpenCL 3 on DSP Systems (It includes fixed-point feature sets, complex type, and DSP performance feature set), and devising the reference design in extending khronos OpenCL 2.2 and SPIR-V to accommodate OpenCL 3 with DSP fixed-point feature Set.
+          In my leisure time, I like jogging, coffee brewing, 
+          and listening <a href="https://en.wikipedia.org/wiki/Nightcore" target="_blank">Nightcore</a> music.
         </span>
       </p>
     </div>
