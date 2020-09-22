@@ -5,6 +5,12 @@
     "src/**/*",
     "images/**/*"
   ],
+  "fragments": [
+    "src/page/profile-page.js",
+    "src/page/experience-page.js",
+    "src/page/project-page.js",
+    "src/page/publication-page.js"
+  ],
   "extraDependencies": [
     "manifest.json",
     "node_modules/@webcomponents/webcomponentsjs/*.js",
@@ -16,55 +22,13 @@
   
   "builds": [
     {
-      "name": "esm-bundled",
-      "browserCapabilities": [
-        "es2015",
-        "modules"
-      ],
-      "js": {
-        "minify": true
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": true
-      },
-      "bundle": true,
+      "name": "es6-prod",
+      "preset": "es6-unbundled",
       "addServiceWorker": true
     },
     {
-      "name": "es6-bundled",
-      "browserCapabilities": [
-        "es2015"
-      ],
-      "js": {
-        "minify": true,
-        "transformModulesToAmd": true
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": true
-      },
-      "bundle": true,
-      "addServiceWorker": true
-    },
-    {
-      "name": "es5-bundled",
-      "js": {
-        "minify": true,
-        "compile": true,
-        "transformModulesToAmd": true
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": true
-      },
-      "bundle": true,
+      "name": "es5-prod",
+      "preset": "es5-bundled",
       "addServiceWorker": true
     }
   ],

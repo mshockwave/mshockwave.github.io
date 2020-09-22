@@ -1,12 +1,21 @@
 {
   "entrypoint": "index.html",
   "shell": "src/page/landing-page.js",
-  "fragments": [],
+  "fragments": [
+    "src/page/profile-page.js",
+    "src/page/experience-page.js",
+    "src/page/project-page.js",
+    "src/page/publication-page.js"
+  ],
   "sources": [
     "src/**/*",
     "images/**/*",
     "index.html",
-    "src/page/landing-page.js"
+    "src/page/landing-page.js",
+    "src/page/profile-page.js",
+    "src/page/experience-page.js",
+    "src/page/project-page.js",
+    "src/page/publication-page.js"
   ],
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",
@@ -19,13 +28,15 @@
   ],
   "builds": [
     {
-      "name": "esm-bundled",
+      "name": "es6-prod",
       "browserCapabilities": [
         "es2015",
-        "modules"
+        "push"
       ],
       "js": {
-        "minify": true
+        "minify": true,
+        "compile": "es2015",
+        "transformModulesToAmd": true
       },
       "css": {
         "minify": true
@@ -33,16 +44,16 @@
       "html": {
         "minify": true
       },
-      "bundle": true,
-      "addServiceWorker": true
+      "bundle": false,
+      "addServiceWorker": true,
+      "addPushManifest": true,
+      "preset": "es6-unbundled"
     },
     {
-      "name": "es6-bundled",
-      "browserCapabilities": [
-        "es2015"
-      ],
+      "name": "es5-prod",
       "js": {
         "minify": true,
+        "compile": "es5",
         "transformModulesToAmd": true
       },
       "css": {
@@ -52,23 +63,9 @@
         "minify": true
       },
       "bundle": true,
-      "addServiceWorker": true
-    },
-    {
-      "name": "es5-bundled",
-      "js": {
-        "minify": true,
-        "compile": true,
-        "transformModulesToAmd": true
-      },
-      "css": {
-        "minify": true
-      },
-      "html": {
-        "minify": true
-      },
-      "bundle": true,
-      "addServiceWorker": true
+      "addServiceWorker": true,
+      "addPushManifest": false,
+      "preset": "es5-bundled"
     }
   ],
   "lint": {
