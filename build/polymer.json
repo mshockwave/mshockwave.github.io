@@ -20,6 +20,7 @@
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",
     "manifest.json",
+    ".nojekyll",
     "node_modules/@webcomponents/webcomponentsjs/*.js",
     "!node_modules/@webcomponents/webcomponentsjs/gulpfile.js",
     "node_modules/@webcomponents/webcomponentsjs/bundles/*.js",
