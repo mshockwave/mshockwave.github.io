@@ -4,6 +4,7 @@ import '../../node_modules/@polymer/iron-flex-layout/iron-flex-layout-classes.js
 import '../../node_modules/@polymer/iron-flex-layout/iron-flex-layout.js';
 import '../../node_modules/@polymer/iron-icon/iron-icon.js';
 import '../../node_modules/@polymer/iron-icons/iron-icons.js';
+import '../../node_modules/@polymer/iron-icons/av-icons.js';
 import '../../node_modules/@polymer/paper-styles/color.js';
 import '../../node_modules/@polymer/paper-card/paper-card.js';
 import '../../node_modules/@polymer/paper-icon-button/paper-icon-button.js';
@@ -92,6 +93,43 @@ class ExperiencePage extends PolymerElement {
         Experience
       </h1>
 
+      <!-- 2020 -->
+      <span chrono-title="">2020</span>
+      <paper-card expand-item="" heading="Compiler Engineer Intern">
+        <div class="card-content layout vertical">
+          <span sub-title="">PlayStation (Sony Interactive Entertainment), San Mateo, CA. June ~ September</span>
+          <span sub-title="">
+            Working on the PlayStation toolchain and open source LLVM compiler.
+        </div>
+      </paper-card>
+
+      <!-- 2019 -->
+      <span chrono-title="">2019</span>
+      <paper-card expand-item="" heading="Speaker">
+        <div class="card-content layout vertical">
+          <span sub-title="">
+            LLVM Dev Meeting 2019, San Jose, CA
+          </span>
+          <span sub-title="">
+            <i>Souper-Charging Peepholes with Target Machine Info</i>
+            <a href="https://www.slideshare.net/bekketmcclane/soupercharging-peepholes-with-target-machine-info-186029829" target="_blank" tabindex="-1">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+            <a href="https://youtu.be/5eSOWM0upN8" target="_blank" tabindex="-1">
+              <paper-icon-button icon="av:video-library" style="margin-left: -8px;"></paper-icon-button>
+            </a>
+          </span>
+        </div>
+      </paper-card>
+      <paper-card expand-item="" heading="Compiler Engineer Intern">
+        <div class="card-content layout vertical">
+          <span sub-title="">MediaTek USA, Woburn, MA. June ~ September</span>
+          <span sub-title="">
+            Working on souper<a href="https://github.com/google/souper" target="_blank" tabindex="-1"><paper-icon-button icon="launch" style="margin-left: -8px;"></paper-icon-button></a>
+            , a LLVM-based super-optimizer</span>
+        </div>
+      </paper-card>
+      <!-- 2018 -->
       <span chrono-title="">2018</span>
       <paper-card expand-item="" heading="Started as Ph.D. Student in Computer Science">
         <div class="card-content layout vertical">
@@ -108,6 +146,7 @@ class ExperiencePage extends PolymerElement {
           <span sub-title="">LLVM-based Compiler Development for DSP processors</span>
         </div>
       </paper-card>
+      <!-- Before 2018 -->
       <paper-card expand-item="" heading="B.S. in Computer Science">
         <div class="card-content layout vertical">
           <span sub-title="">National Tsing Hua University. Hsinchu, Taiwan</span>

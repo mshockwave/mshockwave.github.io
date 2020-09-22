@@ -50,22 +50,27 @@ class PublicationPage extends PolymerElement {
       <h1>Papers</h1>
       <paper-item>
         <span>
-        Chun-Chieh Yang, Shao-Chung Wang, Min-Yih Hsu, and Jenq-Kuen Lee et al. "OpenCL 2.0 Compiler Adaptation on LLVM for PTX Simulators."<i>THE INTERNATIONAL WORKSHOP ON EMBEDDED MULTICORE SYSTEMS(ICPP-EMS)</i>(2017).
+        <u>Min-Yih Hsu</u>, Stan Kvasov, and Vince Del Vecchio. “Souper-Charging Peepholes with Target Machine Info”. <i>LLVM Developers Meeting</i> (2019)
         </span>
       </paper-item>
       <paper-item>
         <span>
-        Min-Yih Hsu, and Jenq-Kuen Lee. "Hydra LLVM: Instruction Selection with Threads."<i>European LLVM Developers Meeting</i>(2017).
+        Chun-Chieh Yang, Shao-Chung Wang, <u>Min-Yih Hsu</u>, and Jenq-Kuen Lee et al. "OpenCL 2.0 Compiler Adaptation on LLVM for PTX Simulators."<i>THE INTERNATIONAL WORKSHOP ON EMBEDDED MULTICORE SYSTEMS(ICPP-EMS)</i>(2017).
         </span>
       </paper-item>
       <paper-item>
         <span>
-        Li Wang, Shao-Chung Wang, Min-Yih Hsu, and Jenq-Kuen Lee et al. "Analyzing OpenCL 2.0 Workloads Using a Heterogeneous CPU-GPU Simulator." <i>IEEE International Symposium on Performance Analysis of Systems and Software </i>(2017).
+        <u>Min-Yih Hsu</u>, and Jenq-Kuen Lee. "Hydra LLVM: Instruction Selection with Threads."<i>European LLVM Developers Meeting</i>(2017).
         </span>
       </paper-item>
       <paper-item>
         <span>
-        Chun-Chieh Yang, Shao-Chung Wang, Min-Yi Hsu, Yuan-Shin Hwang, and Jenq-Kuen Lee. "Support OpenCL 2.0 Compiler on LLVM for Multi-Core Simulations." Submitted to <i>European LLVM Developers Meeting</i> (2017)
+        Li Wang, Shao-Chung Wang, <u>Min-Yih Hsu</u>, and Jenq-Kuen Lee et al. "Analyzing OpenCL 2.0 Workloads Using a Heterogeneous CPU-GPU Simulator." <i>IEEE International Symposium on Performance Analysis of Systems and Software </i>(2017).
+        </span>
+      </paper-item>
+      <paper-item>
+        <span>
+        Chun-Chieh Yang, Shao-Chung Wang, <u>Min-Yi Hsu</u>, Yuan-Shin Hwang, and Jenq-Kuen Lee. "Support OpenCL 2.0 Compiler on LLVM for Multi-Core Simulations." Submitted to <i>European LLVM Developers Meeting</i> (2017)
         </span>
       </paper-item>
 
