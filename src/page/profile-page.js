@@ -49,7 +49,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
     <div class="layout horizontal start wrap center-justified">
       <img id="thumbnail" src="../../images/formal3-small.jpg">
       <p id="bio">
-        <span><b>Min-Yih Hsu</b> (Bekket McClane)</span>
+        <span><b>Min-Yih Hsu</b></span>
         <br><br>
         <span>
           Ph.D. Student in Donald Bren School of Information and Computer Science, University of California, Irvine.
@@ -74,7 +74,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
         <br><br>
         <span>
           In my leisure time, I like jogging, coffee brewing, 
-          and listening Nightcore<a href="https://en.wikipedia.org/wiki/Nightcore" target="_blank"><paper-icon-button icon="launch"></paper-icon-button></a> music.
+          and riding motorcycle.
         </span>
       </p>
     </div>
