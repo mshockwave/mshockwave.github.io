@@ -95,6 +95,30 @@ class ExperiencePage extends PolymerElement {
 
       <!-- 2021 -->
       <span chrono-title="">2021</span>
+      <paper-card expand-item="" heading="Compiler Engineer Intern">
+        <div class="card-content layout vertical">
+          <span sub-title="">Apple, Cupertino, CA. June ~ September</span>
+          <span sub-title="">
+            Improve debug info quality in optimized Swift code.
+            <a href="https://github.com/apple/swift/commits?author=mshockwave" target="_blank">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+          </span>
+        </div>
+      </paper-card>
+      <paper-card expand-item="" heading="Wrote an LLVM Book">
+        <div class="card-content layout vertical">
+          <span sub-title="">
+            <span style="font-style: italic;">
+              LLVM Techniques, Tips, and Best Practices Clang and Middle-End Libraries
+            </span>
+            <a href="https://www.amazon.com/Techniques-Practices-Clang-Middle-End-Libraries/dp/1838824952" target="_blank">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+            , Published by Packt
+          </span>
+        </div>
+      </paper-card>
       <paper-card expand-item="" heading="LLVM M68k Backend Code Owner">
         <div class="card-content layout vertical">
           <span sub-title="">
@@ -113,6 +137,7 @@ class ExperiencePage extends PolymerElement {
           <span sub-title="">PlayStation (Sony Interactive Entertainment), San Mateo, CA. June ~ September</span>
           <span sub-title="">
             Working on the PlayStation toolchain and open source LLVM compiler.
+          </span>
         </div>
       </paper-card>
 
