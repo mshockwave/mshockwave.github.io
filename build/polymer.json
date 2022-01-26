@@ -10,6 +10,7 @@
   "sources": [
     "src/**/*",
     "images/**/*",
+    "assets/**/*",
     "index.html",
     "src/page/landing-page.js",
     "src/page/profile-page.js",

@@ -3,7 +3,8 @@
   "shell": "src/page/landing-page.js",
   "sources": [
     "src/**/*",
-    "images/**/*"
+    "images/**/*",
+    "assets/**/*"
   ],
   "fragments": [
     "src/page/profile-page.js",
