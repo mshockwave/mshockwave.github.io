@@ -131,10 +131,6 @@ class LandingPage extends PolymerElement {
     
     <!-- Put here to get higher z-index -->
     <paper-dialog id="contactDialog" class="layout vertical start">
-
-      <span>Phone:</span>
-      <span>+1 (781)658-8072</span>
-
       <span> Email: </span>
       <img src="../../images/email-uci.png" style="height: 2.0em;">
       <img src="../../images/email-private.png" style="height: 1.4em;">
