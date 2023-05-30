@@ -38,7 +38,18 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
     </style>
 
     <div id="container" class="layout vertical start">
-      <h1>Papers</h1>
+      <h1>Book</h1>
+      <paper-item>
+        <span>
+        <u>Min-Yih Hsu</u>. “LLVM Techniques, Tips, and Best Practices Clang and Middle-End Libraries: Design Powerful and Reliable Compilers Using the Latest Libraries and Tools from LLVM”. <i>Packt Publishing</i> (2021)
+        </span>
+      </paper-item>
+      <h1>Paper and Talk</h1>
+      <paper-item>
+        <span>
+        <u>Min-Yih Hsu</u>, David Gens, Michael Franz. “MCA Daemon: Hybrid Throughput Analysis Beyond Basic Blocks”. <i>EuroLLVM Developers Meeting</i> (2022)
+        </span>
+      </paper-item>
       <paper-item>
         <span>
         <u>Min-Yih Hsu</u>, Stan Kvasov, and Vince Del Vecchio. “Souper-Charging Peepholes with Target Machine Info”. <i>LLVM Developers Meeting</i> (2019)
@@ -68,14 +79,32 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
       <h1>Blog</h1>
       <paper-item>
         <span>
+        M68k LLVM Development Blog
+        <br>
+        <a href="https://m680x0.github.io/blog/" target="_blank" style="margin-left: 0.5em;">
+          Link&nbsp;
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        </span>
+      </paper-item>
+      <paper-item>
+        <span>
+        Medium
+        <br>
+        <a href="https://medium.com/@mshockwave" target="_blank" style="margin-left: 0.5em;">
+          Link&nbsp;
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        </span>
+      </paper-item>
+      <paper-item>
+        <span>
         Shockwave Base.
         <br>
         <a href="http://mshockwave.blogspot.tw/" target="_blank" style="margin-left: 0.5em;">
           Link&nbsp;
           <iron-icon icon="open-in-new"></iron-icon>
         </a>
-        <br>
-        (Since 2014)
         </span>
       </paper-item>
     </div>

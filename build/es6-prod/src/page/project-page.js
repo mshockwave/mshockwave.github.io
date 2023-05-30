@@ -98,6 +98,47 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
 
       <paper-item>
         <h2>
+          GROSS: Research Compiler using Graph IR for Code Optimizations and Code Generations
+        </h2>
+        <a link="" href="https://github.com/mshockwave/gross" target="_blank">
+          Source Code&nbsp;
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        <span description="">
+        GROSS is a research compiler used for studying non-traditional Graph IR, which has advantages on both code optimization and code generations.
+        <br>
+        This compiler was originally created as a class project in Advanced Compiler Construction(CS241) in UC Irvine. The class was instructed by Prof. Michael Franz.
+        </span>
+      </paper-item>
+
+      <paper-item>
+        <h2>
+          Nacro: A better C/C++ macro extension inspired by Rust
+        </h2>
+        <a link="" href="https://github.com/mshockwave/nacro" target="_blank">
+          Source Code&nbsp;
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        <span description="">
+        A better macro extension for C/C++. Implemented in Clang plugins. Inspired by Rust's procedural macro system.
+        </span>
+      </paper-item>
+
+      <paper-item>
+        <h2>
+          SQLGen: Generate SQL from TableGen code
+        </h2>
+        <a link="" href="https://github.com/mshockwave/SQLGen" target="_blank">
+          Source Code&nbsp;
+          <iron-icon icon="open-in-new"></iron-icon>
+        </a>
+        <span description="">
+        This is part of the tutorial "How to write a TableGen backend" in 2021 LLVM Developers' Meeting.
+        </span>
+      </paper-item>
+
+      <paper-item>
+        <h2>
           Reference Design for the Next Generation OpenCL Fixed Point Features
         </h2>
         <a link="" href="https://bitbucket.org/mshockwave/llvm-spirv" target="_blank">
