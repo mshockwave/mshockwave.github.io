@@ -93,6 +93,48 @@ class ExperiencePage extends PolymerElement {
         Experience
       </h1>
 
+      <!-- 2023 -->
+      <span chrono-title="">2023</span>
+      <paper-card expand-item="" heading="Program Committee Member">
+        <div class="card-content layout vertical">
+          <span sub-title="">
+            EuroLLVM Dev Meeting 2023, Glasgow, UK
+            <a href="https://discourse.llvm.org/t/the-2023-eurollvm-program/69514" target="_blank" tabindex="-1">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+          </span>
+        </div>
+      </paper-card>
+
+      <!-- 2022 -->
+      <span chrono-title="">2022</span>
+      <paper-card expand-item="" heading="Keynote Speaker">
+        <div class="card-content layout vertical">
+          <span sub-title="">
+            EuroLLVM Dev Meeting 2022, London, UK
+          </span>
+          <span sub-title="">
+            <i>MCA Daemon: Hybrid Throughput Analysis Beyond Basic Blocks</i>
+            <a href="https://llvm.org/devmtg/2022-05/slides/2022EuroLLVM-MCA-Deamon.pdf" target="_blank" tabindex="-1">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+            <a href="https://youtu.be/ZGEP7JEIKNo" target="_blank" tabindex="-1">
+              <paper-icon-button icon="av:video-library" style="margin-left: -8px;"></paper-icon-button>
+            </a>
+          </span>
+        </div>
+      </paper-card>
+      <paper-card expand-item="" heading="Program Committee Member">
+        <div class="card-content layout vertical">
+          <span sub-title="">
+            LLVM Dev Meeting 2022, San Jose, CA
+            <a href="https://blog.llvm.org/posts/2022-09-30-llvmdevmtgprogram/" target="_blank" tabindex="-1">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+          </span>
+        </div>
+      </paper-card>
+
       <!-- 2021 -->
       <span chrono-title="">2021</span>
       <paper-card expand-item="" heading="Compiler Engineer Intern">
@@ -125,6 +167,31 @@ class ExperiencePage extends PolymerElement {
             Code ownder and primary maintainer of M68k (Motorola 68000 series CPU) backend in LLVM
             <a href="https://github.com/llvm/llvm-project/tree/main/llvm/lib/Target/M68k" target="_blank">
               <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+          </span>
+        </div>
+      </paper-card>
+      <paper-card expand-item="" heading="Speaker">
+        <div class="card-content layout vertical">
+          <span sub-title="">
+            LLVM Dev Meeting 2021, Online
+          </span>
+          <span sub-title="">
+            <i>Handling inline assembly in Clang and LLVM</i>
+            <a href="https://llvm.org/devmtg/2021-11/slides/2021-handling-inline-assembly-in-clang-and-llvm.pdf" target="_blank" tabindex="-1">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+            <a href="https://youtu.be/MeB7Dp3G2UE" target="_blank" tabindex="-1">
+              <paper-icon-button icon="av:video-library" style="margin-left: -8px;"></paper-icon-button>
+            </a>
+          </span>
+          <span sub-title="">
+            <i>How to write a TableGen backend</i>
+            <a href="https://llvm.org/devmtg/2021-11/slides/2021-how-to-write-a-tablegen-backend.pdf" target="_blank" tabindex="-1">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+            <a href="https://youtu.be/UP-LBRbvI_U" target="_blank" tabindex="-1">
+              <paper-icon-button icon="av:video-library" style="margin-left: -8px;"></paper-icon-button>
             </a>
           </span>
         </div>

@@ -61,10 +61,10 @@ class ProfilePage extends PolymerElement {
     <div class="layout horizontal start wrap center-justified">
       <img id="thumbnail" src="../../images/formal3-small.jpg">
       <p id="bio">
-        <span><b>Min-Yih Hsu</b></span>
+        <span><b>Min-Yih "Min" Hsu</b></span>
         <br><br>
         <span>
-          Ph.D. Student in Donald Bren School of Information and Computer Science, University of California, Irvine.
+          Ph.D. Candidate in Donald Bren School of Information and Computer Science, University of California, Irvine.
         </span>
         <br><br>
         <paper-button id="contact" raised="" on-tap="_onContactInfoClick">
@@ -73,20 +73,29 @@ class ProfilePage extends PolymerElement {
         </paper-button>
         <br><br><br>
         <span>
-          I'm currently a Ph.D. student major in computer science in UCI, advised by Prof. Michael Franz.&nbsp;
-          I received my Bachelor degree in computer science from National Tsing Hua University, Taiwan, in 2018.
+          I'm currently a Ph.D. Candidate in computer science at UCI, advised by Prof. Michael Franz.<br>
+          I received my M.S. in Computer Science from UCI in 2022.<br>
+          In 2018, I received my Bachelor degree in computer science from National Tsing Hua University, Taiwan.
           <br><br>
           My research interests includes: 
-          <b>Compilers, High Performance Computing, Security and System Software</b>.
+          <b>Compilers, Program Analysis, Security and System Software</b>.
         </span>
+        <br>
+        <span>
+          I have been <a href="https://reviews.llvm.org/p/myhsu/" target="_blank">actively contributing</a> to LLVM for over 5 years; I served on the program commitee for multiple LLVM Developer's Meetings.
+          I'm also the code owner and primary maintainer of LLVM's M68k compiler backend;
+          author of <i>LLVM Techniques, Tips, and Best Practices Clang and Middle-End Libraries</i>.
+        </span>
+        <br><br>
+        <!--
         <span>
           During my undergraduate career, I've published several works regarding LLVM and OpenCL.
           I have strong compiler background, especially LLVM development, and system programming skills.
         </span>
-        <br><br>
+        -->
         <span>
           In my leisure time, I like jogging, coffee brewing, 
-          and riding motorcycle.
+          playing flight simulator, and riding motorcycle.
         </span>
       </p>
     </div>
