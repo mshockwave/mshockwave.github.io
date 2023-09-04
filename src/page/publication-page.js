@@ -47,6 +47,11 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
       <h1>Paper and Talk</h1>
       <paper-item>
         <span>
+        <u>Min-Yih Hsu</u>, Felicitas Hetzelt, David Gens, Michael Maitland, and Michael Franz. "A Highly Scalable, Hybrid, Cross-Platform Timing Analysis Framework Providing Accurate Differential Throughput Estimation via Instruction-Level Tracing" In <i>Proceedings of ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)</i> 2023
+        </span>
+      </paper-item>
+      <paper-item>
+        <span>
         <u>Min-Yih Hsu</u>, David Gens, Michael Franz. “MCA Daemon: Hybrid Throughput Analysis Beyond Basic Blocks”. <i>EuroLLVM Developers Meeting</i> (2022)
         </span>
       </paper-item>
