@@ -64,7 +64,7 @@ class ProfilePage extends PolymerElement {
         <span><b>Min-Yih "Min" Hsu</b></span>
         <br><br>
         <span>
-          Ph.D. Candidate in Donald Bren School of Information and Computer Science, University of California, Irvine.
+          Compiler Engineer at SiFive, California.
         </span>
         <br><br>
         <paper-button id="contact" raised="" on-tap="_onContactInfoClick">
@@ -73,18 +73,18 @@ class ProfilePage extends PolymerElement {
         </paper-button>
         <br><br><br>
         <span>
-          I'm currently a Ph.D. Candidate in computer science at UCI, advised by Prof. Michael Franz.<br>
+          I received my <b>Ph.D. in Computer Science</b> from University of California, Irvine (UCI) in 2023; my doctoral advisor was <a href="https://www.michaelfranz.com" target="_blank">Prof.&nbsp;Dr.&nbsp;Michael&nbsp;Franz</a>.<br>
+          My research interests include: 
+          Compilers, Program Analysis, and System Software.
+          <br>
           I received my M.S. in Computer Science from UCI in 2022.<br>
           In 2018, I received my Bachelor degree in computer science from National Tsing Hua University, Taiwan.
-          <br><br>
-          My research interests includes: 
-          <b>Compilers, Program Analysis, Security and System Software</b>.
         </span>
-        <br>
+        <br><br>
         <span>
           I have been <a href="https://reviews.llvm.org/p/myhsu/" target="_blank">actively contributing</a> to LLVM for over 5 years; I served on the program commitee for multiple LLVM Developer's Meetings.
           I'm also the code owner and primary maintainer of LLVM's M68k compiler backend;
-          author of <i>LLVM Techniques, Tips, and Best Practices Clang and Middle-End Libraries</i>.
+          author of <a href="https://a.co/d/0AXkEdI" target="_blank"><i>LLVM Techniques, Tips, and Best Practices Clang and Middle-End Libraries</i></a>.
         </span>
         <br><br>
         <!--

@@ -95,6 +95,20 @@ class ExperiencePage extends PolymerElement {
 
       <!-- 2023 -->
       <span chrono-title="">2023</span>
+      <paper-card expand-item="" heading="Staff Compiler Engineer">
+        <div class="card-content layout vertical">
+          <span sub-title="">SiFive
+            <a href="https://www.sifive.com" target="_blank" tabindex="-1">
+              <paper-icon-button icon="launch" style="margin: 0px -8px"></paper-icon-button>
+            </a>
+            , California. September ~ Present
+          </span>
+          <span sub-title="">
+            Working on LLVM backend for RISCV
+          </span>
+        </div>
+      </paper-card>
+
       <paper-card expand-item="" heading="Program Committee Member">
         <div class="card-content layout vertical">
           <span sub-title="">
